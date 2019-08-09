@@ -1,0 +1,28 @@
+{
+  "name": "function-utils",
+  "version": "1.0.0",
+  "description": "JavaScript 函数工具方法",
+  "main": "/dist/function-utils.min.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/psyduck4you/function-utils.git"
+  },
+  "keywords": [
+    "function",
+    "utils",
+    "debounce",
+    "throttle"
+  ],
+  "author": "Yuxiang Yang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/psyduck4you/function-utils/issues"
+  },
+  "homepage": "https://github.com/psyduck4you/function-utils#readme"
+}
