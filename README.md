@@ -15,9 +15,10 @@ npm install @psyduck4u/function-utils
 ```
 
 ## 使用
-在引入`function-utils.min.js`之后，你就可以使用`FnUtils`对象了。
-
-也可以使用AMD，CommonJS，Node modules载入`FnUtils`对象。
+```js
+import FnUtils from '@psyduck4u/function-utils';
+```
+或者在引入`function-utils.min.js`之后，你就可以使用`FnUtils`对象了。
 
 ## 方法
 
