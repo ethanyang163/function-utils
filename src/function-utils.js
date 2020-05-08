@@ -11,7 +11,7 @@
  *
  */
 
-(function() {
+(function () {
     'use strict';
 
     var FnUtils = {
@@ -22,13 +22,13 @@
          * @param {Number} dalay delay in ms
          *
          */
-        debounce: function(func, delay) {
+        debounce: function (func, delay) {
             var inDebounce;
-            return function() {
+            return function () {
                 var context = this;
                 var args = arguments;
                 clearTimeout(inDebounce);
-                inDebounce = setTimeout(function() {
+                inDebounce = setTimeout(function () {
                     func.apply(context, args);
                 }, delay);
             };
@@ -41,25 +41,43 @@
          * @param {Number} limit limit in ms
          *
          */
-        throttle: function(func, limit) {
+        throttle: function (func, limit) {
             var inThrottle = false;
-            return function() {
+            return function () {
                 const args = arguments;
                 const context = this;
                 if (!inThrottle) {
                     func.apply(context, args);
                     inThrottle = true;
-                    setTimeout(function() {
+                    setTimeout(function () {
                         inThrottle = false;
                     }, limit);
                 }
             };
-        }
+        },
+
+        /**
+         *
+         * 检查对象里是否有指定的嵌套属性 例如：object.x.y.z是否存在
+         * @param {Object} obj object
+         * @param {String} path "x.y.z"
+         *
+         */
+        hasProperty: function (obj, path) {
+            var props = path.split('.');
+            for (var i = 0; i < props.length; i++) {
+                if (!obj || !obj.hasOwnProperty(props[i])) {
+                    return false;
+                }
+                obj = obj[props[i]];
+            }
+            return true;
+        },
     };
 
     // AMD support
     if (typeof define === 'function' && define.amd) {
-        define(function() {
+        define(function () {
             return FnUtils;
         });
         // CommonJS and Node.js module support.

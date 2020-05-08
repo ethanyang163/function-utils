@@ -37,6 +37,14 @@ import FnUtils from '@psyduck4u/function-utils';
 
 - `func (Function)` function 
 - `limit (Number)` limit in milliseconds
+  
+### hasProperty
+```js
+  FnUtils.hasProperty(obj, path);
+```
+
+- `obj (Object)` object 
+- `path (String)` eg. "x.y.z"
 
 
 
